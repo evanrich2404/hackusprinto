@@ -5,7 +5,7 @@ import random
 pygame.init()
 
 # Screen dimensions
-WIDTH, HEIGHT = 800, 600
+WIDTH, HEIGHT = 1200, 600
 
 # Colors
 WHITE = (255, 255, 255)
@@ -17,6 +17,11 @@ pygame.display.set_caption("Cloud Catch")
 # Load images
 cloud_img = pygame.image.load("/home/clintiscrazy/hackusprinto/images/cloud.png")  
 raindrop_img = pygame.image.load("/home/clintiscrazy/hackusprinto/images/raindrop.png")
+
+# Scale the raindrop image
+scaled_width = 30  # Adjust this value to your desired width
+scaled_height = int(raindrop_img.get_height() * (scaled_width / raindrop_img.get_width()))  # Calculate the new height while maintaining the aspect ratio
+raindrop_img = pygame.transform.scale(raindrop_img, (scaled_width, scaled_height))
 
 class Cloud(pygame.sprite.Sprite):
     def __init__(self):
@@ -44,7 +49,7 @@ class Raindrop(pygame.sprite.Sprite):
         super().__init__()
         self.image = raindrop_img
         self.rect = self.image.get_rect()
-        self.rect.x = random.randrange(WIDTH - self.rect.width)
+        self.rect.x = random.randrange(max(1, WIDTH - self.rect.width))
         self.rect.y = random.randrange(-100, -40)
         self.speedy = random.randrange(5, 10)
 
