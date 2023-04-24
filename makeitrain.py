@@ -16,8 +16,8 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Cloud Catch")
 
 # Load images
-cloud_img = pygame.image.load("/home/clintiscrazy/hackusprinto/images/cloud.png")  
-raindrop_img = pygame.image.load("/home/clintiscrazy/hackusprinto/images/raindrop.png")
+cloud_img = pygame.image.load("images/cloud.png")  
+raindrop_img = pygame.image.load("images/raindrop.png")
 bg_img = pygame.image.load("/home/clintiscrazy/hackusprinto/images/raindrop.png")
 
 # Scale the raindrop image
@@ -71,6 +71,17 @@ for _ in range(8):
     all_sprites.add(raindrop)
 
 running = True
+
+while running:
+    # ...
+
+    all_sprites.update()
+
+    screen.blit(bg_img, (0, 0))  # Draw the background image
+    all_sprites.draw(screen)
+
+    # ...
+
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
