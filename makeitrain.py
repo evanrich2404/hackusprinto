@@ -2,6 +2,9 @@
 
 import pygame
 import random
+import os
+os.environ['SDL_VIDEODRIVER'] = 'x11'
+
 
 # Initialize Pygame
 pygame.init()
