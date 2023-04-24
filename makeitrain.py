@@ -18,7 +18,7 @@ pygame.display.set_caption("Cloud Catch")
 # Load images
 cloud_img = pygame.image.load("/home/clintiscrazy/hackusprinto/images/cloud.png")  
 raindrop_img = pygame.image.load("/home/clintiscrazy/hackusprinto/images/raindrop.png")
-bg_img = pygame.image.load("bg.jpg")
+bg_img = pygame.image.load("/home/clintiscrazy/hackusprinto/images/raindrop.png")
 
 # Scale the raindrop image
 scaled_width = 30  # Adjust this value to your desired width
