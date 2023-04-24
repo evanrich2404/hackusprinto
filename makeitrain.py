@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import pygame
 import random
 
@@ -18,7 +20,6 @@ pygame.display.set_caption("Cloud Catch")
 # Load images
 cloud_img = pygame.image.load("images/cloud.png")  
 raindrop_img = pygame.image.load("images/raindrop.png")
-bg_img = pygame.image.load("images/bg.jpg")
 
 # Scale the raindrop image
 scaled_width = 30  # Adjust this value to your desired width
@@ -71,17 +72,6 @@ for _ in range(8):
     all_sprites.add(raindrop)
 
 running = True
-
-while running:
-    # ...
-
-    all_sprites.update()
-
-    screen.blit(bg_img, (0, 0))  # Draw the background image
-    all_sprites.draw(screen)
-
-    # ...
-
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
