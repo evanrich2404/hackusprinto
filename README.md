@@ -7,7 +7,9 @@ We initially wanted to try out unity and build a game with that. After lots of l
 
 
 ## How to run game:
-something else needs to go here
+bash
+Copy code
+pip install -r requirements.txt
 
 
 
